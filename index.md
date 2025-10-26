@@ -22,7 +22,7 @@
       width: 400px;
       padding: 16px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      display: flex;
+      display: none;
       flex-direction: column;
     }
 
@@ -139,7 +139,6 @@
       chatContainer.style.display = 'none';
     }
 
-    hideChatContainer();
     const sendBtn = document.getElementById('sendBtn');
     const chatInput = document.getElementById('chatInput');
 
