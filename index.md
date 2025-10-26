@@ -154,7 +154,7 @@
 	        }).finally(() => {
 	          console.log("Message sent - finally");
 	        });
-		}, 2000);
+		}, 3000);
       } else {
         alert("Please enter a message first!");
       }
