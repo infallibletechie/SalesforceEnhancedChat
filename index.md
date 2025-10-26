@@ -121,7 +121,7 @@
              );
          });
 
-        embeddedservice_bootstrap.utilAPI.sendTextMessage(message);
+        embeddedservice_bootstrap.utilAPI.sendTextMessage(message)
         .then(() => {
           console.log("Message sent");
         }).catch(() => {
