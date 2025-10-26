@@ -94,6 +94,10 @@
 </head>
 <body>
   <div class="chat-container">
+	<div>
+		Welcome to our Chat!!!
+		<br/><br/><br/>
+	</div>
     <div class="chat-input-area">
       <input type="text" id="chatInput" class="chat-input" placeholder="Type a message..." />
       <button class="send-button" id="sendBtn">➤</button>
