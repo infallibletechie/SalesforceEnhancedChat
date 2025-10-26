@@ -83,6 +83,12 @@
         });
         /* END:: Conversation Closed Listener */
 
+        /* START:: Button Created Listener */
+        window.addEventListener("onEmbeddedMessagingButtonCreated", (event) => {
+          showChatContainer();
+        });
+        /* END:: Button Created Listener */
+
         embeddedservice_bootstrap.init(
           '00DHo000002fRR9',
           'MIAW',
@@ -133,6 +139,7 @@
       chatContainer.style.display = 'none';
     }
 
+    hideChatContainer();
     const sendBtn = document.getElementById('sendBtn');
     const chatInput = document.getElementById('chatInput');
 
