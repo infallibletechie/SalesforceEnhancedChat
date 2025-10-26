@@ -95,6 +95,10 @@
   </div>
 
   <script>
+  	function hideChatContainer() {
+        const chatContainer = document.querySelector('.chat-container');
+        chatContainer.style.display = 'none';
+	}
     const sendBtn = document.getElementById('sendBtn');
     const chatInput = document.getElementById('chatInput');
 
@@ -103,9 +107,8 @@
       if (message) {
         console.log(message);
         chatInput.value = '';
-        const chatContainer = document.querySelector('.chat-container');
-        chatContainer.style.display = 'none';
-
+		hideChatContainer();
+		  
         embeddedservice_bootstrap.utilAPI.launchChat()
          .then(() => {
              console.log(
