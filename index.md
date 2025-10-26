@@ -22,7 +22,7 @@
       width: 400px;
       padding: 16px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      display: none;
+      display: flex;
       flex-direction: column;
     }
 
