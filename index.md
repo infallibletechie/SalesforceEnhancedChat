@@ -130,14 +130,16 @@
              );
          });
 
-        embeddedservice_bootstrap.utilAPI.sendTextMessage(message)
-        .then(() => {
-          console.log("Message sent");
-        }).catch(() => {
-          console.log("Message not sent");
-        }).finally(() => {
-          console.log("Message sent - finally");
-        });
+	  	setTimeout(() => {
+	        embeddedservice_bootstrap.utilAPI.sendTextMessage(message)
+	        .then(() => {
+	          console.log("Message sent");
+	        }).catch(() => {
+	          console.log("Message not sent");
+	        }).finally(() => {
+	          console.log("Message sent - finally");
+	        });
+		}, 2000);
       } else {
         alert("Please enter a message first!");
       }
