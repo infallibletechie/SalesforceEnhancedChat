@@ -76,6 +76,12 @@
 			} );
 			/* END:: Conversation Opened Listener */
 
+			/* START:: Conversation Closed Listener */
+			window.addEventListener( "onEmbeddedMessagingWindowClosed", ( event ) => {
+				showChatContainer();
+			} );
+			/* END:: Conversation Closed Listener */
+
 			embeddedservice_bootstrap.init(
 				'00DHo000002fRR9',
 				'MIAW',
@@ -105,6 +111,11 @@
   </div>
 
   <script>
+  	function showChatContainer() {
+        const chatContainer = document.querySelector('.chat-container');
+        chatContainer.style.display = 'block';
+	}
+	  
   	function hideChatContainer() {
         const chatContainer = document.querySelector('.chat-container');
         chatContainer.style.display = 'none';
