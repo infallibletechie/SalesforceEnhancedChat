@@ -231,12 +231,12 @@
     // Add an event listener that runs a function when the button is clicked
     orderButton.addEventListener('click', function() {
       // Get the text content of the button
-      const buttonText = button.textContent.trim();
+      const orderButtonText = orderButton.textContent.trim();
       
       // Display the text in the browser's console
-      console.log(buttonText);
+      console.log(orderButtonText);
       launchChat();
-      sendMessageToChat(buttonText);
+      sendMessageToChat(orderButtonText);
     });
 
     // Get the button element using its ID
@@ -244,12 +244,12 @@
     // Add an event listener that runs a function when the button is clicked
     caseButton.addEventListener('click', function() {
       // Get the text content of the button
-      const buttonText = button.textContent.trim();
+      const caseButtonText = caseButton.textContent.trim();
       
       // Display the text in the browser's console
-      console.log(buttonText);
+      console.log(caseButtonText);
       launchChat();
-      sendMessageToChat(buttonText);
+      sendMessageToChat(caseButtonText);
     });
   </script>
 </body>
