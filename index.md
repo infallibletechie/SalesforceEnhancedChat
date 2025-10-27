@@ -152,8 +152,12 @@
 
     <div>
       <br/><br/>
-      <button class="send-message-button" id="connectButton">
-        Connect me with a sales rep
+      <button class="send-message-button" id="orderButton">
+        Need help with my Order
+      </button>
+      <br/><br/>
+      <button class="send-message-button" id="caseButton">
+        Need help with my Case
       </button>
     </div>
   </div>
@@ -223,10 +227,22 @@
     });
 
     // Get the button element using its ID
-    const button = document.getElementById('connectButton');
-    
+    const orderButton = document.getElementById('orderButton');
     // Add an event listener that runs a function when the button is clicked
-    button.addEventListener('click', function() {
+    orderButton.addEventListener('click', function() {
+      // Get the text content of the button
+      const buttonText = button.textContent.trim();
+      
+      // Display the text in the browser's console
+      console.log(buttonText);
+      launchChat();
+      sendMessageToChat(buttonText);
+    });
+
+    // Get the button element using its ID
+    const caseButton = document.getElementById('caseButton');
+    // Add an event listener that runs a function when the button is clicked
+    caseButton.addEventListener('click', function() {
       // Get the text content of the button
       const buttonText = button.textContent.trim();
       
