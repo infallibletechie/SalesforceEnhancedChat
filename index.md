@@ -169,6 +169,19 @@
       chatContainer.style.display = 'none';
     }
 
+    function lauchChat() {
+      embeddedservice_bootstrap.utilAPI.launchChat()
+          .then(() => {
+            console.log('Successfully launched Messaging');
+          })
+          .catch(() => {
+            console.log('Some error occurred when launching Messaging');
+          })
+          .finally(() => {
+            console.log('Successfully launched Messaging - Finally');
+          });
+    }
+
     function sendMessageToChat(message) {
       setTimeout(() => {
           embeddedservice_bootstrap.utilAPI.sendTextMessage(message)
@@ -194,16 +207,7 @@
         chatInput.value = '';
         hideChatContainer();
 
-        embeddedservice_bootstrap.utilAPI.launchChat()
-          .then(() => {
-            console.log('Successfully launched Messaging');
-          })
-          .catch(() => {
-            console.log('Some error occurred when launching Messaging');
-          })
-          .finally(() => {
-            console.log('Successfully launched Messaging - Finally');
-          });
+        launchChat();
 
         sendMessageToChat(message);
       } else {
