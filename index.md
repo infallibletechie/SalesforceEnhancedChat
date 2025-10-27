@@ -151,7 +151,7 @@
     </div>
 
     <div>
-      <button class="sales-rep-button" id="connectButton">
+      <button class="send-message-button" id="connectButton">
         Connect me with a sales rep
       </button>
     </div>
