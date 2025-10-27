@@ -169,7 +169,7 @@
       chatContainer.style.display = 'none';
     }
 
-    function lauchChat() {
+    function launchChat() {
       embeddedservice_bootstrap.utilAPI.launchChat()
           .then(() => {
             console.log('Successfully launched Messaging');
