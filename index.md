@@ -232,7 +232,7 @@
       
       // Display the text in the browser's console
       console.log(buttonText);
-
+      launchChat();
       sendMessageToChat(buttonText);
     });
   </script>
