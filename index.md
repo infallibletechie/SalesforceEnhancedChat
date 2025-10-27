@@ -61,6 +61,29 @@
     .send-button:hover {
       background-color: #005fd1;
     }
+
+    /* --- CSS for Styling the Button --- */
+    .send-message-button {
+      /* Background and Dimensions */
+      background-color: #00008b; /* A deep blue, similar to the image */
+      color: white; /* White text */
+      padding: 15px 30px; /* Padding for height and width */
+      font-size: 18px; /* Readable text size */
+      font-weight: bold;
+      cursor: pointer; /* Changes mouse to a pointer on hover */
+      border: none; /* Remove default button border */
+      display: inline-block; /* Allows setting padding/margin */
+      text-align: center;
+      border-radius: 5px; /* Slight rounding of corners */
+  
+      /* The White Border/Outline Effect */
+      box-shadow: 0 0 0 2px white; /* A 2px white "stroke" */
+      outline: 2px solid #00008b; /* Helps create the gap/depth effect */
+    }
+  
+    .send-message-button:hover {
+      background-color: #0000a0; /* Slightly lighter blue on hover */
+    }
   </style>
 
   <script type="text/javascript">
@@ -126,6 +149,12 @@
       />
       <button class="send-button" id="sendBtn">➤</button>
     </div>
+
+    <div>
+      <button class="sales-rep-button" id="connectButton">
+        Connect me with a sales rep
+      </button>
+    </div>
   </div>
 
   <script>
@@ -137,6 +166,21 @@
     function hideChatContainer() {
       const chatContainer = document.querySelector('.chat-container');
       chatContainer.style.display = 'none';
+    }
+
+    function sendMessageToChat(message) {
+      setTimeout(() => {
+          embeddedservice_bootstrap.utilAPI.sendTextMessage(message)
+            .then(() => {
+              console.log("Message sent");
+            })
+            .catch(() => {
+              console.log("Message not sent");
+            })
+            .finally(() => {
+              console.log("Message sent - finally");
+            });
+        }, 3000);
     }
 
     const sendBtn = document.getElementById('sendBtn');
@@ -160,18 +204,7 @@
             console.log('Successfully launched Messaging - Finally');
           });
 
-        setTimeout(() => {
-          embeddedservice_bootstrap.utilAPI.sendTextMessage(message)
-            .then(() => {
-              console.log("Message sent");
-            })
-            .catch(() => {
-              console.log("Message not sent");
-            })
-            .finally(() => {
-              console.log("Message sent - finally");
-            });
-        }, 3000);
+        sendMessageToChat(message);
       } else {
         alert("Please enter a message first!");
       }
@@ -182,6 +215,20 @@
       if (e.key === 'Enter') {
         sendBtn.click();
       }
+    });
+
+    // Get the button element using its ID
+    const button = document.getElementById('connectButton');
+    
+    // Add an event listener that runs a function when the button is clicked
+    button.addEventListener('click', function() {
+      // Get the text content of the button
+      const buttonText = button.textContent.trim();
+      
+      // Display the text in the browser's console
+      console.log(buttonText);
+
+      sendMessageToChat(buttonText);
     });
   </script>
 </body>
